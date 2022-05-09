@@ -1,11 +1,18 @@
 const Task = (props) => {
+	const { onDeleteTaskHandler, keyToDelete, taskItem } = props;
 	return (
 		<>
 			<div className="card border border-dark mt-2">
 				<div className="card-body pb-1">
-					<p className="card-text">{props.taskItem}</p>
-					{/* <a href="#!" class="btn btn-primary">Go somewhere</a> */}
-					<button className="btn btn-danger">Delete Task</button>
+					<p className="card-text">{taskItem}</p>
+					{/* <button className="btn btn-primary p-1">Edit Task</button> */}
+
+					<button
+						onClick={() => onDeleteTaskHandler(keyToDelete)}
+						className="btn btn-danger p-1"
+					>
+						Delete Task
+					</button>
 				</div>
 			</div>
 		</>
